@@ -1,0 +1,1613 @@
+﻿<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>GT4 Â· AtlÃ¢ntico Sul 2030 â€” A Guerra dos Cabos e Portos</title>
+
+  <!-- Reveal.js core (CDN) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+
+  <!-- Tipografia -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Source+Sans+3:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================
+       GT4 AtlÃ¢ntico Sul Â· Identidade visual refinada
+       Paleta: marinha profunda + dourado naval + creme
+       ========================================================== */
+    :root {
+      /* Paleta harmonizada com ApresentaÃ§Ã£o3.pptx */
+      --gt4-marinha:        #1B2A4A;
+      --gt4-marinha-claro:  #25406b;
+      --gt4-marinha-suave:  #2e527e;
+      --gt4-dourado:        #C9A227;
+      --gt4-dourado-claro:  #e8c455;
+      --gt4-dourado-fundo:  rgba(201, 162, 39, 0.10);
+      --gt4-ciano:          #4FC3F7;
+      --gt4-ciano-claro:    #7dd5fb;
+      --gt4-creme:          #FFFFFF;
+      --gt4-creme-claro:    #f3eedc;
+      --gt4-cinza:          #5A6A7A;
+      --gt4-cinza-claro:    #8899AA;
+      --gt4-cinza-extra:    #D0D8E4;
+      --gt4-vermelho:       #EF5350;
+      --gt4-vermelho-claro: #f47b78;
+      --gt4-verde:          #5a8f6b;
+
+      --serif: 'Lora', 'Times New Roman', Georgia, serif;
+      --sans:  'Source Sans 3', 'Source Sans Pro', -apple-system, sans-serif;
+      --display: 'Montserrat', 'Source Sans 3', sans-serif;
+      --mono:  'JetBrains Mono', monospace;
+    }
+
+    /* ===== Base ===== */
+    html, body { overflow: hidden; }
+    *, *::before, *::after { box-sizing: border-box; }
+    .reveal {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 30px;
+      color: var(--gt4-creme-claro);
+      letter-spacing: 0.005em;
+    }
+    .reveal .slides {
+      text-align: left;
+    }
+    .reveal section {
+      background: linear-gradient(135deg, var(--gt4-marinha) 0%, #25406b 100%);
+      padding: 0.5em 1em;
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 100%;
+      overflow: hidden;
+    }
+    .reveal section::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent 0%, var(--gt4-dourado) 50%, transparent 100%);
+      opacity: 0.4;
+    }
+
+    /* ===== Tipografia hierÃ¡rquica (Montserrat heads + Source Sans body) ===== */
+    .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+      font-family: var(--display);
+      color: var(--gt4-creme);
+      text-transform: none;
+      letter-spacing: -0.01em;
+      font-weight: 600;
+      line-height: 1.15;
+      margin-bottom: 0.5em;
+    }
+    .reveal h1 { font-size: 2em; font-weight: 700; letter-spacing: -0.015em; }
+    .reveal h2 {
+      font-size: 1.25em;
+      color: var(--gt4-creme);
+      font-weight: 700;
+      border-bottom: 2px solid var(--gt4-dourado);
+      padding-bottom: 0.25em;
+      margin-bottom: 0.6em;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+    .reveal h3 {
+      font-size: 1.05em;
+      color: var(--gt4-dourado-claro);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .reveal h4 {
+      font-size: 0.78em;
+      color: var(--gt4-ciano);
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-family: var(--display);
+    }
+    .reveal p, .reveal li {
+      line-height: 1.55;
+      font-weight: 300;
+    }
+    .reveal em {
+      color: var(--gt4-dourado-claro);
+      font-style: italic;
+      font-family: var(--serif);
+    }
+    .reveal strong {
+      color: var(--gt4-creme);
+      font-weight: 600;
+    }
+    .reveal a { color: var(--gt4-dourado-claro); }
+
+    /* ===== CAPA ===== */
+    .capa {
+      text-align: center !important;
+      background: radial-gradient(ellipse at 50% 35%, var(--gt4-marinha-suave) 0%, var(--gt4-marinha) 65%) !important;
+    }
+    .capa::before {
+      content: '';
+      position: absolute;
+      top: 18%; left: 50%;
+      width: 240px; height: 1px;
+      background: var(--gt4-dourado);
+      transform: translateX(-50%);
+      opacity: 0.6;
+    }
+    .capa .titulo-1 {
+      font-family: var(--serif);
+      font-size: 0.5em;
+      font-weight: 400;
+      color: var(--gt4-dourado-claro);
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      margin-top: 0.5em;
+      margin-bottom: 0.8em;
+    }
+    .capa h1 {
+      font-family: var(--display);
+      font-size: 1.7em;
+      margin: 0.1em 0 0;
+      color: var(--gt4-creme);
+      font-weight: 800;
+      letter-spacing: -0.015em;
+      text-transform: uppercase;
+    }
+    .capa .subtitulo {
+      color: var(--gt4-dourado-claro);
+      font-family: var(--display);
+      font-size: 0.65em;
+      margin: 0.5em 0 1.2em;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+    }
+    .capa .autores {
+      font-size: 0.5em;
+      color: var(--gt4-cinza-claro);
+      line-height: 1.9;
+      margin-top: 1em;
+      font-weight: 300;
+      letter-spacing: 0.02em;
+    }
+    .capa .instituicao {
+      margin-top: 2em;
+      font-size: 0.4em;
+      color: var(--gt4-cinza);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+    .capa .data {
+      font-size: 0.4em;
+      color: var(--gt4-cinza);
+      letter-spacing: 0.15em;
+      margin-top: 0.4em;
+      font-family: var(--mono);
+    }
+
+    /* ===== CabeÃ§alho de secÃ§Ã£o ===== */
+    .seccao-tag {
+      position: absolute;
+      top: 1.5em; right: 1.5em;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--gt4-dourado);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.7;
+    }
+
+    /* ===== Footer apresentador ===== */
+    .footer-apresentador {
+      position: fixed;
+      bottom: 14px;
+      left: 28px;
+      font-size: 13px;
+      color: var(--gt4-cinza);
+      opacity: 0.5;
+      font-style: italic;
+      font-family: var(--serif);
+      z-index: 100;
+      letter-spacing: 0.02em;
+    }
+    .reveal .slide-number {
+      color: var(--gt4-dourado) !important;
+      font-family: var(--mono) !important;
+      font-size: 12px !important;
+      opacity: 0.6;
+      background: transparent !important;
+    }
+
+    /* ===== NÃºmeros destaque ===== */
+    .num-destaque {
+      font-family: var(--display);
+      font-size: 2.2em;
+      color: var(--gt4-dourado);
+      font-weight: 800;
+      display: block;
+      line-height: 1;
+      letter-spacing: -0.025em;
+    }
+    .num-vermelho { color: var(--gt4-vermelho-claro); }
+    .num-verde { color: var(--gt4-verde); }
+    .num-cartao {
+      background: linear-gradient(180deg, rgba(200, 164, 74, 0.06) 0%, rgba(200, 164, 74, 0.02) 100%);
+      border: 1px solid rgba(200, 164, 74, 0.18);
+      border-radius: 6px;
+      padding: 0.8em 1em;
+      transition: all 0.3s ease;
+      text-align: left;
+    }
+    .num-cartao:hover {
+      border-color: rgba(200, 164, 74, 0.4);
+      transform: translateY(-2px);
+    }
+    .num-cartao .label {
+      font-size: 0.55em;
+      color: var(--gt4-cinza-claro);
+      line-height: 1.4;
+      margin-top: 0.4em;
+      font-weight: 300;
+    }
+    .num-cartao .fonte {
+      font-size: 0.4em;
+      color: var(--gt4-cinza);
+      margin-top: 0.5em;
+      font-family: var(--mono);
+      letter-spacing: 0.05em;
+    }
+
+    /* ===== CartÃµes e blocos ===== */
+    .bloco-citacao {
+      font-family: var(--serif);
+      font-style: italic;
+      color: var(--gt4-dourado-claro);
+      border-left: 2px solid var(--gt4-dourado);
+      padding: 0.4em 0 0.4em 1.2em;
+      margin: 0.8em 0;
+      font-size: 0.95em;
+      line-height: 1.5;
+    }
+    .bloco-citacao strong {
+      font-style: normal;
+      color: var(--gt4-creme);
+    }
+    .bloco-destaque {
+      background: var(--gt4-dourado-fundo);
+      border-left: 2px solid var(--gt4-dourado);
+      padding: 0.6em 1em;
+      margin: 0.5em 0;
+      border-radius: 0 4px 4px 0;
+      font-size: 0.85em;
+    }
+    .bloco-alerta {
+      background: rgba(176, 58, 58, 0.08);
+      border-left: 2px solid var(--gt4-vermelho);
+      padding: 0.6em 1em;
+      margin: 0.5em 0;
+      border-radius: 0 4px 4px 0;
+      font-size: 0.85em;
+    }
+
+    /* ===== Tabelas ===== */
+    .reveal table {
+      font-size: 0.65em;
+      border-collapse: collapse;
+      margin: 0.5em auto;
+      font-weight: 300;
+    }
+    .reveal table th {
+      background: rgba(30, 71, 115, 0.5);
+      color: var(--gt4-dourado-claro);
+      padding: 0.6em 1em;
+      border-bottom: 1px solid var(--gt4-dourado);
+      font-weight: 500;
+      text-align: left;
+    }
+    .reveal table td {
+      padding: 0.5em 1em;
+      border-bottom: 1px solid rgba(143, 160, 179, 0.15);
+    }
+
+    /* ===== Layouts ===== */
+    .img-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.6em;
+      align-items: start;
+      margin-top: 0.8em;
+    }
+    .img-grid-2 img {
+      max-height: 360px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 4px;
+      border: 1px solid rgba(200, 164, 74, 0.2);
+    }
+    .img-grid-2 .legenda {
+      font-family: var(--serif);
+      font-size: 0.55em;
+      color: var(--gt4-cinza-claro);
+      text-align: center;
+      margin-top: 0.5em;
+      font-style: italic;
+      line-height: 1.4;
+    }
+    .img-side {
+      display: grid;
+      grid-template-columns: 58% 40%;
+      gap: 2%;
+      align-items: start;
+    }
+    .img-side img {
+      width: 100%;
+      max-height: 440px;
+      object-fit: contain;
+      border-radius: 4px;
+      border: 1px solid rgba(200, 164, 74, 0.2);
+    }
+
+    /* ===== Fontes inline ===== */
+    .fonte-inline {
+      font-family: var(--mono);
+      font-size: 0.42em;
+      color: var(--gt4-cinza);
+      letter-spacing: 0.04em;
+      opacity: 0.7;
+    }
+    .fonte-bloco {
+      font-family: var(--mono);
+      font-size: 0.45em;
+      color: var(--gt4-cinza);
+      text-align: right;
+      margin-top: 0.6em;
+      opacity: 0.6;
+      letter-spacing: 0.03em;
+    }
+
+    /* ===== DivisÃ³rias minimalistas ===== */
+    .divisoria {
+      text-align: center !important;
+      background: linear-gradient(135deg, var(--gt4-marinha) 0%, var(--gt4-marinha-claro) 100%) !important;
+    }
+    .divisoria .seccao-numero {
+      font-family: var(--display);
+      font-size: 6em;
+      color: var(--gt4-dourado);
+      opacity: 0.22;
+      line-height: 0.85;
+      font-weight: 800;
+      letter-spacing: -0.06em;
+    }
+    .divisoria .seccao-rotulo {
+      font-family: var(--mono);
+      font-size: 0.4em;
+      color: var(--gt4-dourado);
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      margin-bottom: 0.4em;
+      margin-top: -0.3em;
+    }
+    .divisoria h2 {
+      font-size: 1.6em;
+      margin: 0.3em 0 0.8em;
+      border: none;
+      color: var(--gt4-creme);
+      padding: 0;
+    }
+    .divisoria .seccao-mote {
+      font-family: var(--serif);
+      font-style: italic;
+      color: var(--gt4-cinza-claro);
+      font-size: 0.65em;
+      max-width: 70%;
+      margin: 0 auto;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    /* ===== Tripolar comparison ===== */
+    .tripolar {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.9em;
+      margin-top: 0.6em;
+    }
+    .tripolar .col {
+      padding: 0.9em 1em;
+      border-radius: 6px;
+      background: rgba(30, 71, 115, 0.4);
+      border-top: 2px solid var(--gt4-dourado);
+    }
+    .tripolar .col h3 {
+      margin: 0 0 0.5em 0;
+      font-size: 1em;
+      padding-bottom: 0.3em;
+      border-bottom: 1px solid rgba(200, 164, 74, 0.2);
+    }
+    .tripolar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 0.72em;
+      font-weight: 400;
+    }
+    .tripolar li {
+      padding: 0.35em 0 0.35em 1.1em;
+      line-height: 1.45;
+      position: relative;
+      border-bottom: 1px solid rgba(208, 216, 228, 0.08);
+    }
+    .tripolar li:last-child { border-bottom: none; }
+    .tripolar .marker {
+      display: inline;
+      color: var(--gt4-ciano);
+      font-size: 0.78em;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 600;
+      margin-right: 0.5em;
+    }
+
+    /* Listas com marcador dash dourado (em vez de palito â–¸) */
+    .reveal section ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .reveal section ul > li {
+      position: relative;
+      padding-left: 1.3em;
+      margin-bottom: 0.25em;
+    }
+    .reveal section ul > li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.7em;
+      width: 0.8em;
+      height: 2px;
+      background: var(--gt4-dourado);
+    }
+    .reveal section ul > li ul > li::before {
+      width: 0.5em;
+      background: var(--gt4-ciano);
+    }
+    /* ConclusÃµes usam contador, nÃ£o dash */
+    .reveal section ol.conclusoes > li::before {
+      background: transparent;
+      width: auto;
+      height: auto;
+      top: 0.7em;
+    }
+
+    /* ===== Argumento triÃ¡dico Cambridge ===== */
+    .triade {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.8em;
+      margin-top: 0.8em;
+    }
+    .triade .card {
+      padding: 0.7em 0.9em;
+      border-radius: 6px;
+      font-size: 0.7em;
+      background: rgba(30, 71, 115, 0.4);
+      border-top: 2px solid var(--gt4-dourado);
+      transition: all 0.3s ease;
+    }
+    .triade .card:hover {
+      background: rgba(30, 71, 115, 0.6);
+      transform: translateY(-2px);
+    }
+    .triade .card .seccao {
+      font-family: var(--mono);
+      font-size: 0.7em;
+      color: var(--gt4-dourado);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 0.3em;
+    }
+    .triade .card h4 {
+      margin: 0 0 0.3em 0;
+      font-size: 0.95em;
+      color: var(--gt4-creme);
+      text-transform: none;
+      letter-spacing: 0;
+      font-family: var(--serif);
+      font-weight: 500;
+    }
+
+    /* ===== Mermaid wrapper ===== */
+    .mermaid-frame {
+      background: var(--gt4-creme-claro);
+      padding: 0.8em;
+      border-radius: 6px;
+      border: 1px solid rgba(200, 164, 74, 0.3);
+      max-width: 95%;
+      margin: 0 auto;
+    }
+
+    /* ===== VÃ­deo ===== */
+    .video-frame {
+      position: relative;
+      width: 100%;
+      max-width: 820px;
+      margin: 0.5em auto;
+      border: 1px solid rgba(200, 164, 74, 0.25);
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+    .video-frame video { width: 100%; display: block; }
+
+    /* ===== Lista numerada estilizada ===== */
+    .conclusoes {
+      counter-reset: conc;
+      list-style: none;
+      padding: 0;
+      font-size: 0.78em;
+    }
+    .conclusoes li {
+      counter-increment: conc;
+      padding: 0.7em 0 0.7em 3em;
+      position: relative;
+      line-height: 1.55;
+      border-bottom: 1px solid rgba(143, 160, 179, 0.1);
+    }
+    .conclusoes li:last-child { border-bottom: none; }
+    .conclusoes li::before {
+      content: counter(conc, decimal-leading-zero);
+      position: absolute;
+      left: 0;
+      top: 0.7em;
+      font-family: var(--serif);
+      font-size: 1.4em;
+      font-weight: 600;
+      color: var(--gt4-dourado);
+      line-height: 1;
+    }
+
+    /* ===== Indicador de paÃ­s (mais sÃ³brio que emoji) ===== */
+    .pais-tag {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 0.6em;
+      letter-spacing: 0.1em;
+      padding: 0.15em 0.5em;
+      border: 1px solid var(--gt4-dourado);
+      border-radius: 3px;
+      margin-right: 0.4em;
+      color: var(--gt4-dourado-claro);
+      text-transform: uppercase;
+      vertical-align: middle;
+    }
+
+    /* ===== Animations ===== */
+    .reveal .slides section.present {
+      animation: subtle-fade 0.5s ease-out;
+    }
+    @keyframes subtle-fade {
+      from { opacity: 0.4; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== Miniaturas de autor (cartÃ£o de citaÃ§Ã£o) ===== */
+    .autor-mini {
+      display: inline-block;
+      vertical-align: middle;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: 2px solid var(--gt4-dourado);
+      object-fit: cover;
+      object-position: center top;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+      filter: sepia(0.15) contrast(1.05);
+    }
+    .autor-mini-lg {
+      width: 96px;
+      height: 96px;
+      border-width: 3px;
+    }
+    .autor-cartao {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6em;
+      background: rgba(200, 164, 74, 0.06);
+      border: 1px solid rgba(200, 164, 74, 0.3);
+      border-radius: 40px;
+      padding: 0.3em 0.9em 0.3em 0.3em;
+      font-family: var(--serif);
+      font-size: 0.55em;
+      color: var(--gt4-creme);
+      margin: 0.3em 0.4em 0.3em 0;
+      vertical-align: middle;
+    }
+    .autor-cartao .autor-mini {
+      width: 40px;
+      height: 40px;
+      border-width: 1.5px;
+      margin: 0;
+    }
+    .autor-cartao .nome {
+      font-style: italic;
+      color: var(--gt4-dourado-claro);
+      font-weight: 500;
+    }
+    .autor-cartao .obra {
+      color: var(--gt4-cinza-claro);
+      font-size: 0.85em;
+      font-style: normal;
+      margin-left: 0.3em;
+    }
+    .autor-bloco-divisoria {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4em;
+      margin: 0.8em auto 0;
+    }
+    .autor-bloco-divisoria .autor-mini-lg {
+      filter: sepia(0.18) contrast(1.08);
+    }
+    .autor-bloco-divisoria .legenda-autor {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 0.45em;
+      color: var(--gt4-dourado-claro);
+      letter-spacing: 0.05em;
+    }
+
+    /* ===== Print/PDF ===== */
+    @media print {
+      .reveal .slides section {
+        background: var(--gt4-marinha) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- ============================================
+           S1 Â· CAPA
+           ============================================ -->
+      <section class="capa" data-slide="S1">
+        <div class="titulo-1">EstratÃ©gia MarÃ­tima Â· Ensaio Final</div>
+        <h1>AtlÃ¢ntico Sul 2030</h1>
+        <div class="subtitulo">A Guerra dos Cabos e Portos na CompetiÃ§Ã£o Tripolar</div>
+        <div class="autores">
+          1TEN AN Ana Filipa Pereira Â· 1TEN FZ Edgar Carvalho<br>
+          1TEN STAEL Jorge Pessoa Â· 1TEN EN-MEC JoÃ£o Paulino Â· 1TEN M Filipe Metelo
+        </div>
+        <div class="instituicao">Instituto UniversitÃ¡rio Militar Â· CPOS-M 2025/26 Â· GT4</div>
+        <div class="data">16 Â· JUL Â· 2026</div>
+        <aside class="notes">
+          [Aguardar silÃªncio. Postura erecta. Falar pausadamente.]
+          "Em MarÃ§o de 2026, o Estreito de Ormuz encerrou. O Mar Vermelho estava jÃ¡
+          interditado. Com ambos os pontos crÃ­ticos obstruÃ­dos, a rota do Cabo da Boa
+          EsperanÃ§a tornou-se a Ãºnica alternativa viÃ¡vel para o petrÃ³leo global. NÃ£o Ã©
+          ficÃ§Ã£o estratÃ©gica â€” Ã© o contexto que nos trouxe aqui. Este ensaio demonstra
+          que o AtlÃ¢ntico Sul transitou de oceano perifÃ©rico para arena estratÃ©gica,
+          e que a doutrina naval clÃ¡ssica nÃ£o captura adequadamente esta competiÃ§Ã£o."
+          [Pausa. AvanÃ§ar para S2.] Â· 1TEN Ana Pereira Â· â± 30 seg
+        </aside>
+      </section>
+
+      <!-- ============================================
+           S2 Â· O DESPERTAR â€” trÃªs sinais empÃ­ricos
+           ============================================ -->
+      <section data-slide="S2">
+        <div class="seccao-tag">Abertura</div>
+        <h2>O Despertar do AtlÃ¢ntico Sul</h2>
+        <h4 style="margin-top: -0.3em;">TrÃªs sinais empÃ­ricos Â· 2024â€“2026</h4>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.4em; margin-top: 1.5em;">
+          <div class="num-cartao fragment fade-up">
+            <span class="num-destaque">+74<span style="font-size: 0.5em;">%</span></span>
+            <div class="label">TrÃ¡fego pela <strong>rota do Cabo</strong> Â· Janâ€“Fev 2024</div>
+            <div class="fonte">FMI Â· 2024</div>
+          </div>
+          <div class="num-cartao fragment fade-up">
+            <span class="num-destaque num-vermelho">âˆ’90<span style="font-size: 0.5em;">%</span></span>
+            <div class="label">TrÃ¡fego no <strong>Estreito de Ormuz</strong> Â· MarÃ§o 2026</div>
+            <div class="fonte">Kpler Â· 2026</div>
+          </div>
+          <div class="num-cartao fragment fade-up">
+            <span class="num-destaque">20 <span style="font-size: 0.5em;">M bbl/dia</span></span>
+            <div class="label">PetrÃ³leo redireccionado para a <strong>rota do Cabo</strong></div>
+            <div class="fonte">EIA Â· 2025</div>
+          </div>
+        </div>
+
+        <div class="bloco-citacao fragment" style="margin-top: 1.5em;">
+          Deixou de ser periferia. Ã‰ hoje rota vital â€” e exposta.
+        </div>
+
+        <aside class="notes">
+          "TrÃªs sinais empÃ­ricos. Mais setenta e quatro por cento â€” aumento do trÃ¡fego pela rota do Cabo
+          entre Janeiro e Fevereiro de 2024. Menos noventa por cento â€” reduÃ§Ã£o do trÃ¡fego em Ormuz em
+          MarÃ§o de 2026. Vinte milhÃµes de barris por dia redireccionados para a rota do Cabo. NÃ£o sÃ£o
+          dados de prospectiva â€” sÃ£o dados do FMI, da Kpler e da AgÃªncia Norte-Americana de Energia.
+          O AtlÃ¢ntico Sul deixou de ser periferia. Ã‰ hoje rota vital â€” e exposta." Â· 1TEN Pereira Â· â± 1 min
+        </aside>
+      </section>
+
+      <!-- ============================================
+           S3 Â· TESE E ESTRUTURA
+           ============================================ -->
+      <section data-slide="S3">
+        <div class="seccao-tag">Tese Â· Roadmap</div>
+        <h2>Tese central Â· estrutura do argumento</h2>
+
+        <div class="bloco-citacao" style="margin-bottom: 1.2em;">
+          A lacuna de seguranÃ§a resulta de um <strong>conceito de ameaÃ§a desactualizado</strong>:
+          a competiÃ§Ã£o tripolar Ã© <strong>infraestrutural</strong> â€” cabos, portos, corredores â€”
+          nÃ£o <em>sea control</em> clÃ¡ssico.
+        </div>
+
+        <div class="triade">
+          <div class="card fragment fade-up">
+            <div class="seccao">Â§ I</div>
+            <h4>Chokepoints tridimensionais</h4>
+            <div>GeogrÃ¡ficos Â· digitais Â· logÃ­sticos</div>
+          </div>
+          <div class="card fragment fade-up">
+            <div class="seccao">Â§ II</div>
+            <h4>CompetiÃ§Ã£o infraestrutural</h4>
+            <div><em>StratÃ©gie gÃ©nÃ©rale</em> Â· manobra indirecta (Castex)</div>
+          </div>
+          <div class="card fragment fade-up">
+            <div class="seccao">Â§ III</div>
+            <h4>Hedging das potÃªncias mÃ©dias</h4>
+            <div>A sua viabilidade <em>prova</em> a tese</div>
+          </div>
+          <div class="card fragment fade-up">
+            <div class="seccao">Â§ IV</div>
+            <h4>ModernizaÃ§Ã£o qualitativa</h4>
+            <div>ISR, vigilÃ¢ncia, drones Â· nÃ£o mais navios</div>
+          </div>
+        </div>
+
+        <aside class="notes">
+          "O ensaio responde Ã  pergunta do FAV em quatro tempos: a redefiniÃ§Ã£o dos chokepoints
+          enquanto realidade tridimensional; a caracterizaÃ§Ã£o da competiÃ§Ã£o como
+          infraestrutural; a demonstraÃ§Ã£o de que o hedging das potÃªncias mÃ©dias Ã©, ele prÃ³prio,
+          a prova empÃ­rica da tese; e a definiÃ§Ã£o da modernizaÃ§Ã£o naval relevante como
+          qualitativa, nÃ£o quantitativa." Â· 1TEN Pereira Â· â± 30 seg
+        </aside>
+      </section>
+
+      <!-- ============================================
+           S3a Â· CADEIA LÃ“GICA (mermaid Â· "engenho")
+           ============================================ -->
+      <section data-slide="S3a">
+        <div class="seccao-tag">Cadeia lÃ³gica</div>
+        <h2>Como cada secÃ§Ã£o encadeia a seguinte</h2>
+        <div class="mermaid-frame">
+          <pre class="mermaid">
+flowchart LR
+    P["Pergunta de partida<br/><i>Por que falta arquitectura<br/>de seguranÃ§a ao AS?</i>"]
+    I["Â§ I Â· Chokepoints<br/>tridimensionais"]
+    II["Â§ II Â· CompetiÃ§Ã£o<br/>infraestrutural"]
+    III["Â§ III Â· Hedging<br/>das mÃ©dias"]
+    IV["Â§ IV Â· ModernizaÃ§Ã£o<br/>qualitativa"]
+    C["Resposta<br/><i>O conceito de ameaÃ§a<br/>estÃ¡ desactualizado</i>"]
+
+    P -->|"redefine<br/>chokepoint"| I
+    I -->|"quem os<br/>instrumentaliza?"| II
+    II -->|"que espaÃ§o<br/>deixa Ã s mÃ©dias?"| III
+    III -->|"que modernizaÃ§Ã£o<br/>responde a esta lÃ³gica?"| IV
+    IV -.-> C
+    III ==>|"PROVA EMPÃRICA"| C
+
+    classDef inicio fill:#fff3e0,stroke:#c8a44a,stroke-width:2px,color:#0c1d33
+    classDef medio  fill:#e8eef5,stroke:#1e4773,stroke-width:1.5px,color:#0c1d33
+    classDef final  fill:#f3eedc,stroke:#c8a44a,stroke-width:2.5px,color:#0c1d33
+
+    class P,C inicio
+    class I,II,III,IV medio
+          </pre>
+        </div>
+        <aside class="notes">
+          Slide opcional â€” mostra a cadeia lÃ³gica do ensaio para evidenciar que cada
+          secÃ§Ã£o Ã© consequÃªncia da anterior, nÃ£o justaposiÃ§Ã£o temÃ¡tica. A seta dupla
+          de Â§III para C Ã© a prova empÃ­rica da tese. Skip se tempo apertar.
+          Â· 1TEN Pereira Â· â± 30 seg (opcional)
+        </aside>
+      </section>
+
+      <!-- ============================================
+           S4 Â· CHOKEPOINTS TRIDIMENSIONAIS
+           ============================================ -->
+      <section data-slide="S4">
+        <div class="seccao-tag">Â§ I Â· Chokepoints</div>
+        <h2>Chokepoints tridimensionais</h2>
+        <h4 style="margin-top: -0.3em;">TrÃªs camadas, uma sÃ³ vulnerabilidade</h4>
+
+        <div class="tripolar" style="margin-top: 1.2em;">
+          <div class="col">
+            <h3>GeogrÃ¡ficos</h3>
+            <ul>
+              <li>Suez Â· interdiÃ§Ã£o parcial 2024â€“</li>
+              <li>Ormuz Â· âˆ’90% (Mar 2026)</li>
+              <li>Cabo da Boa EsperanÃ§a Â· +74%</li>
+            </ul>
+          </div>
+          <div class="col">
+            <h3>Digitais</h3>
+            <ul>
+              <li>95% dos fluxos intercontinentais de dados</li>
+              <li>10 biliÃµes de dÃ³lares/dia em transacÃ§Ãµes financeiras</li>
+              <li>2Africa Â· 45 000 km Â· 33 paÃ­ses Â· 180 Tbps</li>
+            </ul>
+          </div>
+          <div class="col">
+            <h3>LogÃ­sticos</h3>
+            <ul>
+              <li>PrÃ©-sal brasileiro Â· 16,8 mil M bbl (reservas)</li>
+              <li>TriÃ¢ngulo do LÃ­tio Â· 56% das reservas mundiais</li>
+              <li>Procura de lÃ­tio Ã— 9 atÃ© 2040</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bloco-alerta fragment" style="margin-top: 1.2em;">
+          <strong>Vazio institucional.</strong> O Art. 6.Âº do Tratado do AtlÃ¢ntico Norte
+          limita o Art. 5.Âº a norte do TrÃ³pico de CÃ¢ncer. Abaixo Â· sem arquitectura colectiva equivalente.
+        </div>
+
+        <aside class="notes">
+          "A noÃ§Ã£o clÃ¡ssica de chokepoint enquanto estreito geogrÃ¡fico Ã© insuficiente. O AtlÃ¢ntico
+          Sul integra trÃªs camadas: geogrÃ¡fica, com Suez e Ormuz; digital, com os cabos submarinos
+          que transportam 95% dos fluxos intercontinentais de dados; e logÃ­stica, com terminais
+          portuÃ¡rios e corredores de minerais crÃ­ticos. E carece de protecÃ§Ã£o institucional para
+          qualquer das trÃªs. O Artigo 6.Âº circunscreve a NATO a norte do TrÃ³pico de CÃ¢ncer."
+          Â· 1TEN Pereira Â· â± 1 min
+        </aside>
+      </section>
+
+      <!-- ============================================
+           DIVISÃ“RIA Â§ I
+           ============================================ -->
+      <section class="divisoria">
+        <div class="seccao-rotulo">SecÃ§Ã£o</div>
+        <div class="seccao-numero">I</div>
+        <h2>Vulnerabilidade tridimensional do AtlÃ¢ntico Sul</h2>
+        <div class="seccao-mote">Geografia Â· dados Â· logÃ­stica â€” uma sÃ³ lacuna institucional</div>
+      </section>
+
+      <!-- ============================================
+           S5 Â· CHOKEPOINTS GEOGRÃFICOS
+           ============================================ -->
+      <section data-slide="S5">
+        <div class="seccao-tag">Â§ I.1 Â· GeogrÃ¡ficos</div>
+        <h2>Chokepoints geogrÃ¡ficos</h2>
+
+        <div class="img-side">
+          <div>
+            <img src="imagens/S05_mapa_rota_cabo.png" alt="Mapa rota do Cabo Â· Suez/Ormuz interditados">
+            <div class="legenda">Rota do Cabo (linha dourada) Â· Suez e Ormuz interditados (Ã—) Â· limite NATO Art. 6.Âº</div>
+          </div>
+          <div>
+            <img src="imagens/S05_ever_given_suez_canal_aerial.jpg" alt="Ever Given encalhado em Suez Â· vista aÃ©rea" style="max-height: 220px;">
+            <div class="legenda">Ever Given Â· Suez, 23 MAR 2021 Â· ESA/Maxar</div>
+            <ul style="font-size: 0.65em; margin-top: 0.8em; padding-left: 1em; line-height: 1.6;">
+              <li>Suez e Ormuz interditados em simultÃ¢neo</li>
+              <li>Cabo Â· alternativa estrutural, nÃ£o conjuntural</li>
+              <li>Seguros e armadores reformulam o risco</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="fonte-bloco">FMI (2024) Â· Kpler (2026) Â· UNCTAD (2024) Â· EIA (2025)</div>
+
+        <aside class="notes">
+          [Apontar para o mapa.]
+          "Este mapa mostra os dois bloqueios simultÃ¢neos: Ormuz, a Oriente; Suez, no MediterrÃ¢neo.
+          A linha dourada Ã© a resposta do mercado: a rota do Cabo tornou-se alternativa estrutural,
+          nÃ£o conjuntural. As seguradoras estÃ£o a actualizar fÃ³rmulas. Os armadores re-equacionam
+          rotas. Para o AtlÃ¢ntico Sul, isto significa mais trÃ¡fego, mais relevÃ¢ncia â€” e mais
+          exposiÃ§Ã£o." Â· 1TEN Paulino Â· â± 1 min
+        </aside>
+      </section>
+
+      <!-- ============================================
+           S5b Â· VÃDEO UNCTAD (BÃ“NUS)
+           ============================================ -->
+      <section data-slide="S5b">
+        <div class="seccao-tag">BÃ³nus Â· UNCTAD</div>
+        <h3>DisrupÃ§Ã£o das rotas marÃ­timas globais</h3>
+        <h4 style="margin-top: -0.3em;">UNCTAD Â· <em>Navigating Troubled Waters</em> Â· 2024</h4>
+        <div class="video-frame">
+          <video controls preload="metadata" poster="imagens/S05_ever_given_suez_canal_aerial.jpg">
+            <source src="fontes/2024-navigating_troubled_waters_video.mp4" type="video/mp4">
+            <p>VÃ­deo nÃ£o disponÃ­vel neste browser. LocalizaÃ§Ã£o: <code>fontes/2024-navigating_troubled_waters_video.mp4</code></p>
+          </video>
+        </div>
+        <div class="fonte-bloco">UNCTAD (2024) Â· <em>Impact on Global Trade of Disruption of Shipping Routes in the Red Sea, Black Sea and Russian Federation</em></div>
+        <aside class="notes">
+          Slide opcional Â· usar apenas se o ritmo permitir entre S5 e S6. ReforÃ§a a leitura
+          institucional ONU/UNCTAD sobre a estruturalidade da disrupÃ§Ã£o. Â· 1TEN Paulino Â· â± opcional
+        </aside>
+      </section>
+
+      <!-- ============================================
+           S6 Â· CHOKEPOINTS DIGITAIS
+           ============================================ -->
+      <section data-slide="S6">
+        <div class="seccao-tag">Â§ I.2 Â· Digitais</div>
+        <h2>Chokepoints digitais</h2>
+
+        <div class="img-side">
+          <div>
+            <img src="imagens/S06_mapa_cabos_atlanticos.png" alt="Mapa cabos atlÃ¢nticos Â· 2Africa, ACE, SAT-3, WACS">
+            <div class="legenda">Cabos atlÃ¢nticos: 2Africa (laranja), ACE/SAT-3/WACS (azul) Â· cortes Mar 2024 Â· incidente <em>Yi Peng 3</em> (BÃ¡ltico)</div>
+          </div>
+          <div>
+            <img src="imagens/S06_nexans_skagerrak_cable_ship.jpg" alt="Navio posa-cabos Nexans Skagerrak" style="max-height: 200px;">
+            <div class="legenda">Nexans Skagerrak Â· navio posa-cabos</div>
+            <ul style="font-size: 0.65em; margin-top: 0.7em; padding-left: 1em; line-height: 1.6;">
+              <li><strong>95%</strong> dos fluxos intercontinentais de dados</li>
+              <li>2Africa Â· 45 000 km Â· China Mobile entre os parceiros</li>
+              <li>Mar 2024 Â· ACE, SAT-3 e MainOne cortados</li>
+              <li>NOV 2024 Â· <em>Yi Peng 3</em> arrasta ferro de fundear 180 mi nÃ¡uticas sobre cabos (BÃ¡ltico)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="fonte-bloco">RAND (2025) Â· CSIS (2025) Â· Meta (2025) Â· SIPRI (2025a) Â· Internet Society (2024) Â· Christian/TeleGeography (2025)</div>
+
+        <aside class="notes">
+          [Apontar para o mapa de cabos.]
+          "Noventa e cinco por cento dos fluxos intercontinentais de dados â€” e dez biliÃµes
+          de dÃ³lares em transacÃ§Ãµes financeiras diÃ¡rias â€” passam por estes cabos. O 2Africa,
+          com 45 000 km, conta com a China Mobile entre os seus parceiros â€” facto nÃ£o trivial
+          para uma anÃ¡lise de seguranÃ§a. Em MarÃ§o de 2024, os cabos ACE, SAT-3 e MainOne foram
+          cortados ao largo da costa ocidental africana. Em Novembro de 2024, o navio chinÃªs
+          Yi Peng 3 arrastou o ferro de fundear por cento e oitenta milhas nÃ¡uticas sobre cabos no BÃ¡ltico.
+          O corte de cabos nÃ£o Ã© hipÃ³tese â€” Ã© prÃ¡tica contemporÃ¢nea." Â· 1TEN Paulino Â· â± 1 min
+        </aside>
+      </section>
+
+      <!-- ============================================
+           S7 Â· CHOKEPOINTS LOGÃSTICOS
+           ============================================ -->
+      <section data-slide="S7">
+        <div class="seccao-tag">Â§ I.3 Â· LogÃ­sticos</div>
+        <h2>Chokepoints logÃ­sticos</h2>
+
+        <div class="img-grid-2">
+          <div>
+            <img src="imagens/S07_plataforma_P51_Petrobras.jpg" alt="Plataforma P-51 Petrobras Â· prÃ©-sal">
+            <div class="legenda">Plataforma P-51 Â· Petrobras Â· prÃ©-sal</div>
+          </div>
+          <div>
+            <img src="imagens/S07_salar_atacama_litio_ESA_sentinel2.jpg" alt="Salar do Atacama Â· piscinas de lÃ­tio">
+            <div class="legenda">Salar do Atacama Â· ESA Sentinel-2 Â· piscinas de lÃ­tio (turquesa)</div>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1em; margin-top: 1em;">
+          <div class="num-cartao">
+            <span class="num-destaque" style="font-size: 1.4em;">16,8 mil M bbl</span>
+            <div class="label">Reservas do prÃ©-sal brasileiro</div>
+            <div class="fonte">Petrobras Â· 2024</div>
+          </div>
+          <div class="num-cartao">
+            <span class="num-destaque" style="font-size: 1.4em;">Ã— 9 atÃ© 2040</span>
+            <div class="label">Procura projectada de lÃ­tio Â· TriÃ¢ngulo concentra 56% das reservas mundiais</div>
+            <div class="fonte">IEA Â· 2024 Â· USGS Â· 2024</div>
+          </div>
+        </div>
+
+        <aside class="notes">
+          "O terceiro nÃ­vel Ã© logÃ­stico. O prÃ©-sal brasileiro contÃ©m 16,8 mil milhÃµes de barris
+          de reservas â€” pilar da seguranÃ§a energÃ©tica global. O TriÃ¢ngulo do LÃ­tio detÃ©m 56%
+          das reservas mundiais; a IEA projecta que a procura se multiplique por nove atÃ© 2040.
+          Quem controlar as rotas de saÃ­da controla cadeias de abastecimento crÃ­ticas para a
+          transiÃ§Ã£o energÃ©tica." Â· 1TEN Paulino Â· â± 1 min
+        </aside>
+      </section>
+
+      <!-- ============================================
+           DIVISÃ“RIA Â§ II
+           ============================================ -->
+      <section class="divisoria" data-slide="S8">
+        <div class="seccao-rotulo">SecÃ§Ã£o</div>
+        <div class="seccao-numero">II</div>
+        <h2>CompetiÃ§Ã£o infraestrutural Â· trÃªs potÃªncias, trÃªs instrumentos</h2>
+        <div class="autor-bloco-divisoria">
+          <img class="autor-mini autor-mini-lg" src="imagens/autor_Castex_Raoul.jpg" alt="Almirante Raoul Castex">
+          <div class="legenda-autor">Almirante Raoul Castex (1878â€“1968)</div>
+        </div>
+        <div class="seccao-mote">
+          <em>StratÃ©gie gÃ©nÃ©rale</em>, manobra indirecta.<br>
+          Nenhuma das trÃªs recorre Ã  esquadra de batalha clÃ¡ssica.
+        </div>
+        <aside class="notes">
+          "Como competem as trÃªs grandes potÃªncias? Recorremos a Castex: a stratÃ©gie gÃ©nÃ©rale
+          integra dimensÃµes militar, diplomÃ¡tica e econÃ³mica. No AtlÃ¢ntico Sul, cada potÃªncia
+          escolheu um instrumento prÃ³prio â€” nenhum corresponde Ã  esquadra de batalha clÃ¡ssica."
+          Â· 1TEN Metelo Â· â± 10 seg
+        </aside>
+      </section>
+
+      <!-- ============================================
+           S9 Â· CHINA
+           ============================================ -->
+      <section data-slide="S9">
+        <div class="seccao-tag">Â§ II.1 Â· China</div>
+        <h2><span class="pais-tag">CHN</span> Infraestrutura como manobra indirecta</h2>
+
+        <ul style="font-size: 0.85em; line-height: 1.8;">
+          <li class="fragment"><strong>46 projectos portuÃ¡rios</strong> construÃ­dos, financiados ou operados na Ãfrica Subsariana <span class="fonte-inline">(CSIS, 2019)</span></li>
+          <li class="fragment"><strong>$181 mil M</strong> em emprÃ©stimos Â· 2000â€“2024 <span class="fonte-inline">(SAIS-CARI, 2024)</span></li>
+          <li class="fragment">Porto de <strong>Bata</strong> (GuinÃ© Equatorial) Â· padrÃ£o Djibouti â€” instalaÃ§Ã£o logÃ­stica com potencial de conversÃ£o militar <span class="fonte-inline">(DoD, 2025)</span></li>
+          <li class="fragment">Cabo <strong>2Africa</strong> Â· China Mobile entre os parceiros</li>
+          <li class="fragment"><strong>TAZARA</strong> Â· $1,4 mil M chineses â€” resposta directa ao Corredor do Lobito americano</li>
+        </ul>
+
+        <div class="bloco-citacao fragment" style="margin-top: 1em; display: flex; align-items: center; gap: 1em;">
+          <img class="autor-mini" src="imagens/autor_Castex_Raoul.jpg" alt="Castex" style="flex-shrink: 0;">
+          <span>Manobra indirecta de Castex â€” acumulaÃ§Ã£o gradual de vantagem posicional pela infraestrutura.</span>
+        </div>
+
+        <aside class="notes">
+          "A China construiu, financiou ou opera 46 projectos portuÃ¡rios na Ãfrica Subsariana.
+          Os emprÃ©stimos totalizaram 181 mil milhÃµes de dÃ³lares entre 2000 e 2024, segundo o
+          SAIS-CARI. O porto de Bata, na GuinÃ© Equatorial, segue o padrÃ£o de Djibouti â€” instalaÃ§Ã£o
+          apresentada como logÃ­stica mas com potencial de conversÃ£o militar, identificado pelo
+          PentÃ¡gono em 2025. O cabo 2Africa tem a China Mobile entre os parceiros. A TAZARA
+          recebeu mil e quatrocentos milhÃµes de dÃ³lares chineses â€” resposta directa ao Corredor
+          do Lobito americano. Ã‰ a manobra indirecta de Castex: acumulaÃ§Ã£o gradual de vantagem
+          posicional." Â· 1TEN Metelo Â· â± 1 min
+        </aside>
+      </section>
+
+      <!-- ============================================
+           S10 Â· EUA
+           ============================================ -->
+      <section data-slide="S10">
+        <div class="seccao-tag">Â§ II.2 Â· EUA</div>
+        <h2><span class="pais-tag">USA</span> Resposta geoeconÃ³mica reactiva</h2>
+
+        <div class="img-side">
+          <div>
+            <img src="imagens/S10_mapa_lobito_corridor.png" alt="Mapa Corredor do Lobito vs TAZARA">
+            <div class="legenda">Corredor do Lobito (dourado) Â· TAZARA chinesa (vermelho)</div>
+          </div>
+          <div>
+            <ul style="font-size: 0.7em; line-height: 1.7; padding-left: 1em;">
+              <li>Cobalto e lÃ­tio Â· DRC â†’ Lobito</li>
+              <li><strong>$6 mil M+</strong> comprometidos</li>
+              <li>Resposta directa Ã  TAZARA chinesa</li>
+            </ul>
+            <div class="bloco-destaque" style="margin-top: 1em; font-size: 0.7em;">
+              <strong>Contraste</strong> Â· Indo-PacÃ­fico: <em>carrier strike groups</em>.<br>
+              AtlÃ¢ntico Sul: <em>USNS Comfort</em> Â· navio-hospital (<em>Continuing Promise</em>, 2025).
+            </div>
+          </div>
+        </div>
+
+        <div class="fonte-bloco">Atlantic Council (2025) Â· DFC (2025) Â· USSOUTHCOM (2025)</div>
+
+        <aside class="notes">
+          [Apontar para o mapa.]
+          "A resposta americana Ã© primordialmente geoeconÃ³mica. O Corredor do Lobito transporta
+          cobalto e lÃ­tio da RepÃºblica DemocrÃ¡tica do Congo para o porto de Lobito, no AtlÃ¢ntico â€”
+          mais de seis mil milhÃµes de dÃ³lares comprometidos. Resposta directa Ã  TAZARA chinesa.
+          Mas atenÃ§Ã£o ao contraste: no Indo-PacÃ­fico, os EUA destacam grupos de combate; no
+          AtlÃ¢ntico Sul, a missÃ£o de maior visibilidade em 2025 foi o USNS Comfort â€” um
+          navio-hospital. A presenÃ§a americana Ã© reactiva, nÃ£o proactiva." Â· 1TEN Metelo Â· â± 1 min
+        </aside>
+      </section>
+
+      <!-- ============================================
+           S11 Â· RÃšSSIA
+           ============================================ -->
+      <section data-slide="S11">
+        <div class="seccao-tag">Â§ II.3 Â· RÃºssia</div>
+        <h2><span class="pais-tag">RUS</span> DeclÃ­nio naval Â· presenÃ§a terrestre</h2>
+
+        <div class="img-grid-2">
+          <div>
+            <img src="imagens/S11_fragata_gorshkov.jpg" alt="Fragata Almirante Gorshkov">
+            <div class="legenda"><strong>Mosi II Â· 2023</strong><br>Fragata Almirante Gorshkov Â· mÃ­sseis Zircon</div>
+          </div>
+          <div>
+            <img src="imagens/S11_corveta_stoykiy.jpg" alt="Corveta Stoykiy">
+            <div class="legenda"><strong>Mosi III Â· 2026</strong><br>Corveta Stoykiy Â· sem capacidade de projecÃ§Ã£o equivalente</div>
+          </div>
+        </div>
+
+        <div class="bloco-citacao fragment" style="margin-top: 1em; text-align: center;">
+          De fragata hipersÃ³nica a corveta em trÃªs anos. Port Sudan suspenso (Nov 2025).
+          PresenÃ§a russa hoje terrestre â€” <em>Africa Corps</em> em 5 paÃ­ses â€” nÃ£o naval.
+        </div>
+
+        <div class="fonte-bloco">Faulkner et al. (2024) Â· ADF (2025) Â· Maritime Executive (2025) Â· Sudan Tribune (2025)</div>
+
+        <aside class="notes">
+          [Apontar para as duas fotografias.]
+          "O declÃ­nio naval russo Ã© documentÃ¡vel em dois instantÃ¢neos. Mosi II, 2023: a RÃºssia
+          destacou a fragata Almirante Gorshkov, com mÃ­sseis hipersÃ³nicos Zircon â€” projecÃ§Ã£o
+          de poder. Mosi III, 2026: a contribuiÃ§Ã£o reduziu-se Ã  corveta Stoykiy, sem capacidade
+          de projecÃ§Ã£o equivalente. O acordo de Port Sudan foi suspenso em Novembro de 2025.
+          De fragata hipersÃ³nica a corveta em trÃªs anos. A presenÃ§a russa no AtlÃ¢ntico Sul Ã©
+          hoje terrestre â€” Africa Corps em cinco paÃ­ses â€” nÃ£o naval." Â· 1TEN Metelo Â· â± 1 min
+        </aside>
+      </section>
+
+      <!-- ============================================
+           S12 Â· SÃNTESE TRIPOLAR
+           ============================================ -->
+      <section data-slide="S12">
+        <div class="seccao-tag">Â§ II Â· SÃ­ntese</div>
+        <h2>SÃ­ntese tripolar</h2>
+
+        <div class="tripolar">
+          <div class="col">
+            <h3><span class="pais-tag">CHN</span></h3>
+            <ul>
+              <li><span class="marker">Instrumento</span> infraestrutura</li>
+              <li><span class="marker">Capital</span> massivo</li>
+              <li><span class="marker">TrajectÃ³ria</span> <span style="color: var(--gt4-dourado);">â†— ascendente</span></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h3><span class="pais-tag">USA</span></h3>
+            <ul>
+              <li><span class="marker">Instrumento</span> geoeconomia</li>
+              <li><span class="marker">Capital</span> dirigido</li>
+              <li><span class="marker">TrajectÃ³ria</span> <span style="color: var(--gt4-cinza-claro);">â†” reactiva</span></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h3><span class="pais-tag">RUS</span></h3>
+            <ul>
+              <li><span class="marker">Instrumento</span> paramilitar</li>
+              <li><span class="marker">Capital</span> limitado</li>
+              <li><span class="marker">TrajectÃ³ria</span> <span style="color: var(--gt4-vermelho-claro);">â†˜ declÃ­nio</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bloco-citacao fragment" style="margin-top: 1.4em; text-align: center;">
+          A competiÃ§Ã£o nÃ£o se trava entre <em>frotas</em> â€” trava-se entre <em>redes</em>.
+          <br>Ã‰ este o nÃºcleo analÃ­tico do ensaio.
+        </div>
+
+        <aside class="notes">
+          "SÃ­ntese: China com infraestrutura, capital massivo, trajectÃ³ria ascendente. EUA
+          com geoeconomia, posiÃ§Ã£o reactiva. RÃºssia com meios paramilitares, em declÃ­nio.
+          A competiÃ§Ã£o nÃ£o se trava entre frotas â€” trava-se entre redes. Ã‰ este o nÃºcleo
+          analÃ­tico do ensaio." Â· 1TEN Metelo Â· â± 30 seg
+        </aside>
+      </section>
+
+      <!-- ============================================
+           DIVISÃ“RIA Â§ III
+           ============================================ -->
+      <section class="divisoria" data-slide="S13">
+        <div class="seccao-rotulo">SecÃ§Ã£o</div>
+        <div class="seccao-numero">III</div>
+        <h2>Hedging das potÃªncias mÃ©dias</h2>
+        <div class="seccao-mote">
+          Brasil Â· Angola Â· Ãfrica do Sul Â· Portugal nÃ£o sÃ£o receptÃ¡culos passivos.<br>
+          A viabilidade do <em>hedging</em> prova que a competiÃ§Ã£o Ã© infraestrutural.
+        </div>
+        <aside class="notes">
+          "As potÃªncias mÃ©dias nÃ£o sÃ£o receptÃ¡culos passivos. Brasil, Angola e Ãfrica do Sul
+          moldam activamente esta competiÃ§Ã£o atravÃ©s de hedging â€” manutenÃ§Ã£o deliberada de
+          relaÃ§Ãµes simultÃ¢neas com potÃªncias rivais, para preservar autonomia e maximizar
+          ganhos. Que isto seja viÃ¡vel Ã© a prova empÃ­rica de que a competiÃ§Ã£o Ã©
+          infraestrutural â€” uma competiÃ§Ã£o militar clÃ¡ssica forÃ§aria escolha de lado."
+          Â· 1TEN Carvalho Â· â± 10 seg
+        </aside>
+      </section>
+
+      <!-- ============================================
+           S14 Â· BRASIL
+           ============================================ -->
+      <section data-slide="S14">
+        <div class="seccao-tag">Â§ III.1 Â· Brasil</div>
+        <h2><span class="pais-tag">BRA</span> <em>Active Non-Alignment</em></h2>
+
+        <div class="img-side">
+          <div>
+            <img src="imagens/S14_submarino_riachuelo_S40_marinha_brasil.jpg" alt="Submarino Riachuelo S40 Â· Marinha do Brasil" style="max-height: 360px;">
+            <div class="legenda">Submarino Riachuelo (S40) Â· Marinha do Brasil Â· primeiro do programa PROSUB</div>
+          </div>
+          <div>
+            <ul style="font-size: 0.78em; line-height: 1.8; padding-left: 1em;">
+              <li class="fragment">2024 Â· <strong>recusa formal da BRI</strong> Â· 2.Âº membro fundador BRICS a fazÃª-lo</li>
+              <li class="fragment">2025 Â· co-presidÃªncia <strong>BRICS Rio</strong></li>
+              <li class="fragment"><strong>PROSUB</strong> Â· tecnologia francesa (parceiro NATO)</li>
+              <li class="fragment">~2034 Â· submarino nuclear <strong>Ãlvaro Alberto</strong></li>
+            </ul>
+            <div class="bloco-destaque fragment" style="margin-top: 0.8em; font-size: 0.7em;">
+              <em>Hedging</em> em acto Â· cooperaÃ§Ã£o tÃ©cnica com FranÃ§a, lideranÃ§a BRICS, recusa BRI.
+            </div>
+          </div>
+        </div>
+
+        <div class="fonte-bloco">CEBRI (2025) Â· Foreign Policy (2024) Â· Naval News (2025) Â· Janes (2026)</div>
+
+        <aside class="notes">
+          "O Brasil adoptou formalmente a doutrina de Active Non-Alignment: em 2024 recusou a
+          BRI, sendo o segundo membro fundador dos BRICS a fazÃª-lo. Simultaneamente, co-presidiu
+          os BRICS no Rio em 2025 e desenvolve o PROSUB com tecnologia francesa, parceiro NATO.
+          O submarino nuclear Ãlvaro Alberto, previsto para 2034, farÃ¡ do Brasil a Ãºnica
+          potÃªncia do AtlÃ¢ntico Sul com capacidade submarina de propulsÃ£o nuclear. Hedging
+          em acto." Â· 1TEN Carvalho Â· â± 1 min
+        </aside>
+      </section>
+
+      <!-- ============================================
+           S15 Â· ANGOLA
+           ============================================ -->
+      <section data-slide="S15">
+        <div class="seccao-tag">Â§ III.2 Â· Angola</div>
+        <h2><span class="pais-tag">AGO</span> <em>Middle Power Dreaming</em></h2>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1em; margin-top: 1.2em;">
+          <div class="num-cartao">
+            <div style="font-family: var(--mono); color: var(--gt4-dourado); font-size: 0.7em; letter-spacing: 0.1em;">USA</div>
+            <span class="num-destaque" style="font-size: 1.3em;">$553 M</span>
+            <div class="label">DFC Â· Corredor do Lobito</div>
+          </div>
+          <div class="num-cartao">
+            <div style="font-family: var(--mono); color: var(--gt4-dourado); font-size: 0.7em; letter-spacing: 0.1em;">FRA</div>
+            <span class="num-destaque" style="font-size: 1.3em;">â‚¬473 M</span>
+            <div class="label">Acordos bilaterais</div>
+          </div>
+          <div class="num-cartao">
+            <div style="font-family: var(--mono); color: var(--gt4-dourado); font-size: 0.7em; letter-spacing: 0.1em;">CHN</div>
+            <span class="num-destaque" style="font-size: 0.95em;">Maior aeroporto<br>chinÃªs fora da China</span>
+            <div class="label">Financiamento integral</div>
+          </div>
+        </div>
+
+        <div class="bloco-citacao fragment" style="margin-top: 1.4em; text-align: center;">
+          NÃ£o pertence aos BRICS Â· equidistÃ¢ncia deliberada Â· benefÃ­cios de todos os concorrentes.
+        </div>
+
+        <div class="fonte-bloco">ECFR (2025) Â· DFC (2025) Â· AidData (2025)</div>
+
+        <aside class="notes">
+          "Angola exemplifica o hedging enquanto estratÃ©gia de ascensÃ£o. Recebe simultaneamente
+          553 milhÃµes de dÃ³lares da DFC americana no Corredor do Lobito, 473 milhÃµes de euros
+          de acordos com FranÃ§a, e beneficia do maior aeroporto financiado pela China fora
+          da China. NÃ£o Ã© membro dos BRICS. MantÃ©m equidistÃ¢ncia deliberada e extrai benefÃ­cios
+          de todos os concorrentes. O European Council on Foreign Relations cunhou a expressÃ£o
+          middle power dreaming para esta posiÃ§Ã£o." Â· 1TEN Carvalho Â· â± 1 min
+        </aside>
+      </section>
+
+      <!-- ============================================
+           S16 Â· ÃFRICA DO SUL
+           ============================================ -->
+      <section data-slide="S16">
+        <div class="seccao-tag">Â§ III.3 Â· Ãfrica do Sul</div>
+        <h2><span class="pais-tag">RSA</span> O custo do <em>hedging</em></h2>
+
+        <div class="img-side">
+          <div>
+            <div class="num-cartao" style="text-align: center;">
+              <span class="num-destaque num-vermelho">âˆ’25%</span>
+              <div class="label">Despesa militar desde 2015<br>$2,8 mil M (2024)</div>
+              <div class="fonte">SIPRI Â· 2025b</div>
+            </div>
+            <div class="bloco-alerta" style="margin-top: 0.8em; font-size: 0.7em;">
+              <strong>Estado da forÃ§a naval</strong>:<br>
+              1 fragata operacional Â· 0 submarinos navegÃ¡veis
+            </div>
+          </div>
+          <div>
+            <ul style="font-size: 0.7em; line-height: 1.7; padding-left: 1em;">
+              <li class="fragment">2025 Â· presidÃªncia do <strong>G20</strong></li>
+              <li class="fragment">JAN 2026 Â· exercÃ­cios navais com <span class="pais-tag" style="font-size: 0.7em;">RUS</span> + <span class="pais-tag" style="font-size: 0.7em;">CHN</span> + <span class="pais-tag" style="font-size: 0.7em;">IRN</span></li>
+              <li class="fragment">FEV 2026 Â· voto a favor da <strong>UcrÃ¢nia</strong> na ONU</li>
+              <li class="fragment">AdministraÃ§Ã£o Trump Â· <strong>excluiu RSA</strong> das reuniÃµes preparatÃ³rias do G-20</li>
+            </ul>
+            <div class="bloco-alerta fragment" style="margin-top: 0.7em; font-size: 0.7em;">
+              O custo do <em>hedging</em> torna-se visÃ­vel.
+            </div>
+          </div>
+        </div>
+
+        <div class="fonte-bloco">DefenceWeb (2023, 2025) Â· Foreign Policy (2025) Â· UN GA (2025) Â· Daily Maverick (2025)</div>
+
+        <aside class="notes">
+          [Apontar para o grÃ¡fico.]
+          "A Ãfrica do Sul oferece o caso mais complexo. A despesa militar caiu vinte e cinco
+          por cento desde 2015, fixando-se em 2,8 mil milhÃµes em 2024. Opera uma fragata e
+          zero submarinos em condiÃ§Ãµes de navegar. E todavia: presidiu o G20 em 2025; em
+          Janeiro de 2026 hospedou exercÃ­cios navais com RÃºssia, China e IrÃ£o; em Fevereiro
+          votou a favor da UcrÃ¢nia na ONU; e a administraÃ§Ã£o Trump excluiu-a das reuniÃµes
+          preparatÃ³rias do G-20. O custo do hedging torna-se visÃ­vel." Â· 1TEN Carvalho Â· â± 1 min
+        </aside>
+      </section>
+
+      <!-- ============================================
+           S17 Â· PORTUGAL
+           ============================================ -->
+      <section data-slide="S17">
+        <div class="seccao-tag">Â§ III.4 Â· Portugal</div>
+        <h2><span class="pais-tag">PRT</span> ConvergÃªncia institucional Ãºnica</h2>
+
+        <div style="margin-top: 1em;">
+          <ul style="font-size: 0.85em; line-height: 1.9;">
+            <li class="fragment">Ãšnico Estado com pertenÃ§a simultÃ¢nea Ã  <strong>NATO</strong> e lideranÃ§a <em>de facto</em> na <strong>CPLP</strong></li>
+            <li class="fragment"><strong>ZEE de 1,7 milhÃµes de kmÂ²</strong>, concentrada nos AÃ§ores Â· controlo sobre rotas transatlÃ¢nticas</li>
+            <li class="fragment">AÃ§ores Â· <em>centro de gravidade extra-metropolitano</em>, no sentido em que Castex usou o termo <span class="autor-cartao"><img class="autor-mini" src="imagens/autor_Castex_Raoul.jpg" alt="Castex"><span class="nome">Castex</span><span class="obra">1929â€“35</span></span></li>
+            <li class="fragment"><strong>NRP D. JoÃ£o II</strong> Â· primeiro porta-drones da UniÃ£o Europeia Â· 132 milhÃµes de euros (cerca de 30% do custo de uma fragata convencional)</li>
+          </ul>
+        </div>
+        <div class="bloco-citacao fragment" style="margin-top: 1.2em;">
+          A posiÃ§Ã£o estratÃ©gica de Portugal reside nÃ£o na dimensÃ£o da frota â€” mas na <strong>convergÃªncia de NATO, cooperaÃ§Ã£o CPLP e posiÃ§Ã£o aÃ§oriana</strong>.
+        </div>
+
+        <div class="fonte-bloco">Castex (1929â€“1935/1994) Â· DGRM (n.d.) Â· Bernardino (2025) Â· Brahy (2026)</div>
+
+        <aside class="notes">
+          "Portugal Ã© o Ãºnico Estado com pertenÃ§a simultÃ¢nea Ã  NATO e lideranÃ§a de facto na CPLP.
+          A ZEE portuguesa de 1,7 milhÃµes de kmÂ², concentrada nos AÃ§ores, confere controlo sobre
+          rotas transatlÃ¢nticas. Os AÃ§ores constituem um centro de gravidade extra-metropolitano,
+          no sentido em que Castex usou o termo. O NRP D. JoÃ£o II â€” primeiro porta-drones da
+          UniÃ£o Europeia, financiado pelo Fundo de RecuperaÃ§Ã£o e ResiliÃªncia a 132 milhÃµes de
+          euros, cerca de 30% do custo de uma fragata convencional â€” confirma a orientaÃ§Ã£o
+          qualitativa. A posiÃ§Ã£o estratÃ©gica de Portugal reside nÃ£o na dimensÃ£o da frota, mas
+          na convergÃªncia de NATO, cooperaÃ§Ã£o CPLP e posiÃ§Ã£o aÃ§oriana." Â· 1TEN Pereira Â· â± 1 min
+        </aside>
+      </section>
+
+      <!-- ============================================
+           S18 Â· CPLP
+           ============================================ -->
+      <section data-slide="S18">
+        <div class="seccao-tag">Â§ III Â· CPLP</div>
+        <h2>CPLP Â· arquitectura emergente</h2>
+
+        <div class="img-side">
+          <div>
+            <img src="imagens/S18_mapa_cplp_atlantico.png" alt="Mapa CPLP atlÃ¢ntico">
+            <div class="legenda">CPLP atlÃ¢ntica Â· limite NATO Art. 6.Âº Â· AÃ§ores como hub</div>
+          </div>
+          <div>
+            <ul style="font-size: 0.72em; line-height: 1.7; padding-left: 1em;">
+              <li class="fragment"><strong>&gt;12 M kmÂ²</strong> Â· ZEE combinada com plataforma continental estendida (CPLP atlÃ¢ntica)</li>
+              <li class="fragment"><strong>ZOPACAS</strong> reativada em ABR 2023 Â· sem secretariado permanente nem mecanismos vinculativos</li>
+              <li class="fragment"><strong>CAVM AÃ§ores</strong> (proposta GT4 Â· conceito exploratÃ³rio) Â· ISR partilhado CPLP / NATO / UE Â· sujeito a vontade polÃ­tica, financiamento e cadeia de comando por definir</li>
+            </ul>
+            <div class="bloco-destaque fragment" style="margin-top: 0.8em; font-size: 0.72em;">
+              <strong>Janela</strong> Â· revitalizaÃ§Ã£o ZOPACAS Â· Ã­mpeto NATO/UE pÃ³s-crises de cabos Â· fecho financeiro do Lobito.
+            </div>
+          </div>
+        </div>
+
+        <div class="fonte-bloco">Bernardino (2025) Â· Ugeda &amp; Sanches (2025) Â· Abdenur &amp; Mattheis (2023) Â· NATO (1949 / 2022)</div>
+
+        <aside class="notes">
+          [Apontar para o mapa.]
+          "A ZEE combinada com plataforma continental estendida dos membros atlÃ¢nticos da CPLP
+          ultrapassa 12 milhÃµes de kmÂ². A ZOPACAS foi reativada em Abril de 2023 mas carece de
+          secretariado permanente, mecanismo de financiamento e procedimentos vinculativos.
+          Neste ensaio propÃµe-se, como conceito exploratÃ³rio, um Centro AtlÃ¢ntico de VigilÃ¢ncia
+          MarÃ­tima â€” CAVM â€” nos AÃ§ores: plataforma de partilha de ISR entre parceiros CPLP, NATO
+          e UE, sujeita a vontade polÃ­tica, financiamento e cadeia de comando ainda por definir.
+          A janela Ã© real: revitalizaÃ§Ã£o da ZOPACAS, Ã­mpeto da NATO e UE provocado pelas crises
+          de cabos, fecho financeiro do Corredor do Lobito." Â· 1TEN Carvalho Â· â± 1 min
+        </aside>
+      </section>
+
+      <!-- ============================================
+           DIVISÃ“RIA Â§ IV
+           ============================================ -->
+      <section class="divisoria" data-slide="S19">
+        <div class="seccao-rotulo">SecÃ§Ã£o</div>
+        <div class="seccao-numero">IV</div>
+        <h2>ModernizaÃ§Ã£o naval qualitativa</h2>
+        <div class="seccao-mote">A resposta operacional vem do Mar Negro, do BÃ¡ltico e do AtlÃ¢ntico Sul.</div>
+        <aside class="notes">
+          "A quarta secÃ§Ã£o responde Ã  questÃ£o operacional: como deve a modernizaÃ§Ã£o naval
+          adaptar-se? A resposta vem do Mar Negro, do BÃ¡ltico e do AtlÃ¢ntico Sul."
+          Â· 1TEN Pessoa Â· â± 10 seg
+        </aside>
+      </section>
+
+      <!-- ============================================
+           S20 Â· LIÃ‡Ã•ES DA UCRÃ‚NIA
+           ============================================ -->
+      <section data-slide="S20">
+        <div class="seccao-tag">Â§ IV Â· LiÃ§Ãµes</div>
+        <h2>LiÃ§Ãµes da UcrÃ¢nia Â· ISR &gt; frotas</h2>
+
+        <div class="img-side">
+          <div>
+            <img src="imagens/S20_drones_navais_ucrania_SBU.jpg" alt="Drones navais ucranianos Â· SBU" style="max-height: 320px;">
+            <div class="legenda">USVs ucranianos Â· ServiÃ§o de SeguranÃ§a da UcrÃ¢nia (SBU)</div>
+          </div>
+          <div>
+            <ul style="font-size: 0.72em; line-height: 1.7; padding-left: 1em;">
+              <li class="fragment">A UcrÃ¢nia, sem marinha equivalente Ã  russa, afundou ou danificou:
+                <ul style="font-size: 0.95em; margin-top: 0.3em; padding-left: 1.3em;">
+                  <li>Cruzador <em>Moskva</em> Â· navio-almirante</li>
+                  <li><em>Novocherkassk</em></li>
+                  <li>+20 unidades da Frota do Mar Negro</li>
+                </ul>
+              </li>
+              <li class="fragment">Ferramentas: mÃ­sseis <strong>Neptune</strong> Â· drones <strong>Magura V5</strong> Â· ISR partilhado pela NATO</li>
+              <li class="fragment">Hughes et al. (2018) Â· <strong>C4ISR</strong> = multiplicador crÃ­tico de forÃ§a</li>
+              <li class="fragment">Corbett (1911) Â· o comando do mar pode ser <em>temporÃ¡rio e local</em>, nÃ£o absoluto <span class="autor-cartao"><img class="autor-mini" src="imagens/autor_Corbett_Julian.jpg" alt="Corbett"><span class="nome">Corbett</span><span class="obra">1911</span></span></li>
+            </ul>
+            <div class="bloco-destaque fragment" style="margin-top: 0.7em; font-size: 0.72em;">
+              Marinhas pequenas com ISR superior produzem efeitos desproporcionados na vigilÃ¢ncia de cabos e no controlo de rotas.
+            </div>
+          </div>
+        </div>
+
+        <aside class="notes">
+          "A guerra na UcrÃ¢nia produziu uma liÃ§Ã£o estratÃ©gica decisiva: drones navais e ISR
+          partilhado podem neutralizar frotas convencionais. A UcrÃ¢nia, sem marinha equivalente
+          Ã  russa, afundou ou danificou significativamente a Frota do Mar Negro â€” o cruzador
+          Moskva, a Novocherkassk, mais de vinte unidades â€” recorrendo a mÃ­sseis Neptune,
+          drones Magura V5 e a ISR partilhado pela NATO. Hughes e colaboradores definem o
+          C4ISR como multiplicador crÃ­tico de forÃ§a. A liÃ§Ã£o Ã© directamente aplicÃ¡vel ao
+          AtlÃ¢ntico Sul: marinhas pequenas com ISR superior produzem efeitos desproporcionados
+          na vigilÃ¢ncia de cabos e no controlo de rotas." Â· 1TEN Pessoa Â· â± 1,5 min
+        </aside>
+      </section>
+
+      <!-- ============================================
+           S21 Â· CONCLUSÃ•ES
+           ============================================ -->
+      <section data-slide="S21">
+        <div class="seccao-tag">ConclusÃµes</div>
+        <h2>Quatro proposiÃ§Ãµes conclusivas</h2>
+
+        <ol class="conclusoes">
+          <li class="fragment">Os <strong>chokepoints</strong> do AtlÃ¢ntico Sul sÃ£o <em>tridimensionais</em> â€” geogrÃ¡ficos, digitais e logÃ­sticos â€” e nenhum dispÃµe de protecÃ§Ã£o institucional adequada.</li>
+          <li class="fragment">A <strong>competiÃ§Ã£o Ã© infraestrutural</strong>. China nos portos e cabos Â· EUA nos corredores geoeconÃ³micos Â· RÃºssia em presenÃ§a paramilitar declinante. <em>A doutrina naval clÃ¡ssica nÃ£o a captura.</em></li>
+          <li class="fragment">As <strong>potÃªncias mÃ©dias possuem agÃªncia</strong>. Brasil, Angola e Ãfrica do Sul nÃ£o sÃ£o peÃ§as de tabuleiro â€” sÃ£o jogadoras com estratÃ©gias prÃ³prias.</li>
+          <li class="fragment"><strong>Portugal</strong> reÃºne uma convergÃªncia institucional Ãºnica â€” NATO, CPLP e AÃ§ores â€” que confere capacidade de mediaÃ§Ã£o e vigilÃ¢ncia <em>que nenhum outro Estado possui</em>.</li>
+        </ol>
+
+        <div class="bloco-destaque fragment" style="margin-top: 0.6em;">
+          <strong>Janela de oportunidade real</strong>: ZOPACAS 2026 Â· momentum pÃ³s-UcrÃ¢nia Â· Lobito em execuÃ§Ã£o.
+          <div style="margin-top: 0.4em; font-size: 0.85em; font-style: italic; color: var(--gt4-cinza-claro);">
+            O risco maior nÃ£o Ã© a competiÃ§Ã£o em si â€” Ã© a <strong style="color: var(--gt4-vermelho-claro); font-style: normal;">ausÃªncia de arquitectura institucional</strong> para a gerir.
+          </div>
+        </div>
+
+        <aside class="notes">
+          [Falar com clareza. NÃ£o acelerar.]
+          "Quatro proposiÃ§Ãµes conclusivas, decorrentes directamente da anÃ¡lise. Primeiro: os
+          chokepoints do AtlÃ¢ntico Sul sÃ£o tridimensionais â€” geogrÃ¡ficos, digitais e logÃ­sticos â€”
+          e nenhum dispÃµe de protecÃ§Ã£o institucional adequada. Segundo: a competiÃ§Ã£o Ã©
+          infraestrutural. China nos portos e cabos. EUA nos corredores geoeconÃ³micos. RÃºssia
+          em presenÃ§a paramilitar declinante. A doutrina naval clÃ¡ssica nÃ£o a captura. Terceiro:
+          as potÃªncias mÃ©dias possuem agÃªncia. Brasil, Angola e Ãfrica do Sul nÃ£o sÃ£o peÃ§as
+          de tabuleiro â€” sÃ£o jogadoras com estratÃ©gias prÃ³prias. Quarto: Portugal reÃºne uma
+          convergÃªncia institucional Ãºnica â€” NATO, CPLP e AÃ§ores â€” que confere capacidade de
+          mediaÃ§Ã£o e vigilÃ¢ncia que nenhum outro Estado possui. A janela de oportunidade â€”
+          ZOPACAS 2026, momentum pÃ³s-UcrÃ¢nia, Lobito em execuÃ§Ã£o â€” Ã© real. O risco maior
+          nÃ£o Ã© a competiÃ§Ã£o em si; Ã© a ausÃªncia de arquitectura institucional para a gerir."
+          [Pausa de 2 segundos. Olhar para o jÃºri.] Â· 1TEN Pessoa Â· â± 1,5 min
+        </aside>
+      </section>
+
+      <!-- ============================================
+           S22 Â· ENCERRAMENTO
+           ============================================ -->
+      <section class="capa" data-slide="S22">
+        <div class="titulo-1" style="margin-bottom: 1.5em;">Obrigado Â· Q&amp;A</div>
+        <h1 style="font-size: 1.1em;">As 63 fontes citadas estÃ£o disponÃ­veis no ensaio completo.</h1>
+        <div class="subtitulo" style="margin-top: 1.2em;">Estamos disponÃ­veis para perguntas.</div>
+        <div class="instituicao" style="margin-top: 2.5em;">GT4 Â· AtlÃ¢ntico Sul 2030 Â· IUM CPOS-M 2025/26</div>
+        <aside class="notes">
+          "As sessenta e trÃªs fontes citadas estÃ£o disponÃ­veis no ensaio completo. Ficamos
+          disponÃ­veis para perguntas." Â· 1TEN Pessoa Â· â± 15 seg
+          [CoordenaÃ§Ã£o Q&amp;A: teoria â†’ Metelo Â· dados â†’ Paulino/Carvalho Â· Portugal/CPLP â†’ Pereira/Pessoa]
+        </aside>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Footer apresentador (dinÃ¢mico) -->
+  <div class="footer-apresentador" id="footer-apresentador"></div>
+
+  <!-- Reveal.js + plugins -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/zoom/zoom.js"></script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        fontFamily: 'Inter, sans-serif',
+        primaryColor: '#f3eedc',
+        primaryTextColor: '#0c1d33',
+        primaryBorderColor: '#c8a44a',
+        lineColor: '#1e4773',
+        secondaryColor: '#e8eef5',
+        tertiaryColor: '#fbf9f2'
+      },
+      flowchart: { curve: 'basis', padding: 12 }
+    });
+    window.mermaid = mermaid;
+  </script>
+
+  <script>
+    const apresentadores = {
+      'S1': '1TEN AN Ana Filipa Pereira',
+      'S2': '1TEN AN Ana Filipa Pereira',
+      'S3': '1TEN AN Ana Filipa Pereira',
+      'S3a': '1TEN AN Ana Filipa Pereira',
+      'S4': '1TEN AN Ana Filipa Pereira',
+      'S5': '1TEN EN-MEC JoÃ£o Paulino',
+      'S5b': '1TEN EN-MEC JoÃ£o Paulino',
+      'S6': '1TEN EN-MEC JoÃ£o Paulino',
+      'S7': '1TEN EN-MEC JoÃ£o Paulino',
+      'S8': '1TEN M Filipe Metelo',
+      'S9': '1TEN M Filipe Metelo',
+      'S10': '1TEN M Filipe Metelo',
+      'S11': '1TEN M Filipe Metelo',
+      'S12': '1TEN M Filipe Metelo',
+      'S13': '1TEN FZ Edgar Carvalho',
+      'S14': '1TEN FZ Edgar Carvalho',
+      'S15': '1TEN FZ Edgar Carvalho',
+      'S16': '1TEN FZ Edgar Carvalho',
+      'S17': '1TEN AN Ana Filipa Pereira',
+      'S18': '1TEN FZ Edgar Carvalho',
+      'S19': '1TEN STAEL Jorge Pessoa',
+      'S20': '1TEN STAEL Jorge Pessoa',
+      'S21': '1TEN STAEL Jorge Pessoa',
+      'S22': '1TEN STAEL Jorge Pessoa'
+    };
+
+    Reveal.initialize({
+      hash: true,
+      slideNumber: 'c/t',
+      controls: true,
+      progress: true,
+      center: false,
+      transition: 'slide',
+      transitionSpeed: 'default',
+      backgroundTransition: 'fade',
+      width: 1600,
+      height: 900,
+      margin: 0.025,
+      minScale: 0.2,
+      maxScale: 1.8,
+      pdfSeparateFragments: false,
+      plugins: [RevealNotes, RevealHighlight, RevealZoom]
+    });
+
+    function updateFooter(slide) {
+      const id = slide?.getAttribute('data-slide');
+      const f = document.getElementById('footer-apresentador');
+      f.textContent = (id && apresentadores[id]) ? apresentadores[id] : '';
+    }
+    Reveal.on('slidechanged', e => updateFooter(e.currentSlide));
+    Reveal.on('ready', e => updateFooter(e.currentSlide));
+  </script>
+</body>
+</html>
+
