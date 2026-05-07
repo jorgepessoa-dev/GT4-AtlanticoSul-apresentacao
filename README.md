@@ -10,9 +10,26 @@ Apresentação académica · Reveal.js HTML5 · Instituto Universitário Militar
 
 ## Como abrir
 
-### A · Browser (qualquer dispositivo · sem instalar nada)
+### A · Browser online (com internet · sem instalar nada)
 
-Abrir directamente <https://jorgepessoa-dev.github.io/GT4-AtlanticoSul-apresentacao/> em desktop, tablet ou telemóvel. Recomendado **Chrome** ou **Firefox** em *fullscreen* (`F11`) para a apresentação ao vivo.
+Abrir directamente <https://jorgepessoa-dev.github.io/GT4-AtlanticoSul-apresentacao/> em desktop, tablet ou telemóvel.
+
+### 🎯 Cenário **AUDITÓRIO** (PC fixo · internet limitada · USB)
+
+A apresentação **funciona 100% offline**. Todas as dependências (Reveal.js, Mermaid, fontes, vídeo) estão **empacotadas no repo** (`vendor/`).
+
+**Procedimento recomendado**:
+
+1. No teu PC: descarregar ZIP do repo
+   - <https://github.com/jorgepessoa-dev/GT4-AtlanticoSul-apresentacao/archive/refs/heads/main.zip>
+   - (~7 MB · ou *Code → Download ZIP* na página do GitHub)
+2. Extrair para uma **pen USB**
+3. No PC do auditório: abrir a pen e fazer **duplo-clique em `serve.bat`**
+   - Browser predefinido abre automaticamente em `http://localhost:8000`
+   - Tudo funciona sem internet (CDN, fontes, vídeo, Mermaid · todos locais)
+4. `F11` para fullscreen · começar a apresentar
+
+**Backup**: ter também o **PDF exportado** (instruções em §C abaixo) num pen separado, caso o `serve.bat` seja bloqueado por política de segurança no PC do auditório.
 
 ### B · Local sem internet (apresentação offline)
 
