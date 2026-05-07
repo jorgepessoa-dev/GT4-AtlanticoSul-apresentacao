@@ -53,8 +53,15 @@ html, body { overflow: hidden; }
   padding: 0.6em 1.2em 0.4em;
   width: 100%;
   height: 100%;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
   overflow: hidden;
 }
+.reveal section.divisoria,
+.reveal section.capa { justify-content: center; }
+.reveal section > h2:first-of-type,
+.reveal section > .tag-seccao + h2 { margin-top: 0; }
 .reveal section::after {
   content: '';
   position: absolute;
@@ -471,7 +478,7 @@ html, body { overflow: hidden; }
   font-size: 6.5em;
   font-weight: 800;
   color: var(--c-dourado);
-  opacity: 0.22;
+  opacity: 0.32;
   line-height: 0.85;
   letter-spacing: -0.06em;
   margin: 0;
@@ -683,38 +690,145 @@ html, body { overflow: hidden; }
   </aside>
 </section>
 
-<!-- ===== S3a Â· CADEIA LÃ“GICA ===== -->
+<!-- ===== S3a Â· CADEIA LÃ“GICA (HTML/CSS flowchart) ===== -->
 <section data-slide="S3a">
   <div class="tag-seccao">Cadeia lÃ³gica</div>
   <h2>Cada secÃ§Ã£o Ã© consequÃªncia da anterior</h2>
-  <div class="mermaid-frame">
-    <pre class="mermaid">
-flowchart LR
-    P["Pergunta de partida<br/><i>Por que falta arquitectura<br/>de seguranÃ§a ao AS?</i>"]
-    I["Â§ I Â· Chokepoints<br/>tridimensionais"]
-    II["Â§ II Â· CompetiÃ§Ã£o<br/>infraestrutural"]
-    III["Â§ III Â· Hedging<br/>das mÃ©dias"]
-    IV["Â§ IV Â· ModernizaÃ§Ã£o<br/>qualitativa"]
-    C["Resposta<br/><i>Conceito de ameaÃ§a<br/>desactualizado</i>"]
 
-    P -->|"redefine<br/>chokepoint"| I
-    I -->|"quem os<br/>instrumentaliza?"| II
-    II -->|"que espaÃ§o<br/>Ã s mÃ©dias?"| III
-    III -->|"que modernizaÃ§Ã£o<br/>responde?"| IV
-    IV -.-> C
-    III ==>|"PROVA EMPÃRICA"| C
-
-    classDef inicio fill:#fff3e0,stroke:#C9A227,stroke-width:2px,color:#1B2A4A
-    classDef medio  fill:#e8eef5,stroke:#25406b,stroke-width:1.5px,color:#1B2A4A
-    class P,C inicio
-    class I,II,III,IV medio
-    </pre>
+  <div class="cadeia-fluxo">
+    <div class="no no-pergunta">
+      <div class="no-rotulo">Pergunta</div>
+      <div class="no-texto"><em>Por que falta arquitectura<br>de seguranÃ§a ao AS?</em></div>
+    </div>
+    <div class="seta seta-arg">redefine</div>
+    <div class="no">
+      <div class="no-rotulo">Â§ I</div>
+      <div class="no-texto">Chokepoints<br>tridimensionais</div>
+    </div>
+    <div class="seta seta-arg">instrumentaliza</div>
+    <div class="no">
+      <div class="no-rotulo">Â§ II</div>
+      <div class="no-texto">CompetiÃ§Ã£o<br>infraestrutural</div>
+    </div>
+    <div class="seta seta-arg">deixa espaÃ§o</div>
+    <div class="no no-prova">
+      <div class="no-rotulo">Â§ III</div>
+      <div class="no-texto">Hedging das<br>mÃ©dias</div>
+    </div>
+    <div class="seta seta-arg">define</div>
+    <div class="no">
+      <div class="no-rotulo">Â§ IV</div>
+      <div class="no-texto">ModernizaÃ§Ã£o<br>qualitativa</div>
+    </div>
+    <div class="seta seta-resposta">implica</div>
+    <div class="no no-resposta">
+      <div class="no-rotulo">Resposta</div>
+      <div class="no-texto"><em>Conceito de ameaÃ§a<br>desactualizado</em></div>
+    </div>
   </div>
+
+  <div class="prova-empirica">
+    <span class="prova-seta">â‡’</span>
+    <strong>Â§ III prova a tese empiricamente</strong> â€” a viabilidade do <em>hedging</em> sÃ³ Ã© possÃ­vel porque a competiÃ§Ã£o Ã© infraestrutural
+  </div>
+
   <aside class="notes">
-    Cadeia lÃ³gica Â· seta dupla Â§III â†’ C marca a prova empÃ­rica da tese.
+    Cadeia lÃ³gica Â· Â§III â†’ Resposta marca a prova empÃ­rica da tese.
     Skip se faltar tempo. Â· 1TEN Pereira Â· â± 30 seg (opcional)
   </aside>
 </section>
+
+<style>
+.cadeia-fluxo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4em;
+  margin: 0.8em 0;
+  flex-wrap: nowrap;
+}
+.cadeia-fluxo .no {
+  background: var(--c-creme-2);
+  color: var(--c-marinha);
+  border: 2px solid var(--c-marinha-2);
+  border-radius: 6px;
+  padding: 0.6em 0.6em;
+  text-align: center;
+  font-size: 0.55em;
+  line-height: 1.3;
+  min-width: 6.5em;
+  flex-shrink: 0;
+}
+.cadeia-fluxo .no-pergunta,
+.cadeia-fluxo .no-resposta {
+  background: var(--c-dourado-2);
+  border-color: var(--c-dourado);
+}
+.cadeia-fluxo .no-prova {
+  background: var(--c-ciano);
+  border-color: #1976D2;
+  color: var(--c-marinha);
+}
+.cadeia-fluxo .no-rotulo {
+  font-family: var(--f-mono);
+  font-size: 0.85em;
+  font-weight: 600;
+  color: var(--c-marinha-2);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.3em;
+}
+.cadeia-fluxo .no-prova .no-rotulo,
+.cadeia-fluxo .no-pergunta .no-rotulo,
+.cadeia-fluxo .no-resposta .no-rotulo { color: var(--c-marinha); }
+.cadeia-fluxo .no-texto { font-weight: 500; }
+.cadeia-fluxo .no-texto em { font-style: italic; color: var(--c-marinha-2); font-family: var(--f-serif); }
+.cadeia-fluxo .seta {
+  position: relative;
+  font-family: var(--f-mono);
+  font-size: 0.45em;
+  color: var(--c-dourado-2);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0 0.3em;
+  flex-shrink: 0;
+}
+.cadeia-fluxo .seta::after {
+  content: 'â†’';
+  display: block;
+  font-size: 1.5em;
+  color: var(--c-dourado);
+  margin-top: 0.15em;
+}
+.cadeia-fluxo .seta-resposta::after {
+  color: var(--c-creme-2);
+}
+
+.prova-empirica {
+  background: linear-gradient(90deg, rgba(79,195,247,0.12) 0%, rgba(201,162,39,0.08) 100%);
+  border: 1px solid var(--c-ciano);
+  border-radius: 6px;
+  padding: 0.7em 1em;
+  font-size: 0.7em;
+  margin-top: 0.6em;
+  display: flex;
+  align-items: center;
+  gap: 0.8em;
+}
+.prova-empirica .prova-seta {
+  font-family: var(--f-display);
+  font-size: 1.6em;
+  font-weight: 800;
+  color: var(--c-ciano);
+  line-height: 1;
+}
+.prova-empirica strong {
+  color: var(--c-ciano-2);
+  margin-right: 0.4em;
+}
+.prova-empirica em { font-style: italic; color: var(--c-dourado-2); }
+</style>
 
 <!-- ===== S4 Â· CHOKEPOINTS 3D ===== -->
 <section data-slide="S4">
@@ -1347,7 +1461,7 @@ flowchart LR
 <script src="vendor/mermaid/mermaid.min.js"></script>
 <script>
   mermaid.initialize({
-    startOnLoad: true,
+    startOnLoad: false,
     theme: 'base',
     themeVariables: {
       fontFamily: 'Source Sans 3, sans-serif',
@@ -1399,7 +1513,13 @@ function updateFooter(slide) {
   document.getElementById('footer-apresentador').textContent = (id && apresentadores[id]) || '';
 }
 Reveal.on('slidechanged', e => updateFooter(e.currentSlide));
-Reveal.on('ready', e => updateFooter(e.currentSlide));
+Reveal.on('ready', e => {
+  updateFooter(e.currentSlide);
+  // Re-run Mermaid apÃ³s Reveal montar DOM (resolve race condition com startOnLoad)
+  if (window.mermaid && typeof mermaid.run === 'function') {
+    setTimeout(() => mermaid.run({ querySelector: '.mermaid' }).catch(()=>{}), 200);
+  }
+});
 </script>
 </body>
 </html>
