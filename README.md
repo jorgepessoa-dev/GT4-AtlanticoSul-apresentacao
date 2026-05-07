@@ -10,11 +10,31 @@ Apresentação académica · Reveal.js HTML5 · Instituto Universitário Militar
 
 ## Como abrir
 
-| Onde | Como |
-|---|---|
-| **Browser (qualquer dispositivo)** | Abrir a URL acima · funciona em desktop, tablet, telemóvel |
-| **Local (depois de clonar o repo)** | Abrir `index.html` no browser · ou correr `python -m http.server 8000` na raiz e aceder a `http://localhost:8000` |
-| **Apresentação ao vivo** | Recomendado: Chrome ou Firefox em modo *fullscreen* (`F11`) num portátil ligado ao projector |
+### A · Browser (qualquer dispositivo · sem instalar nada)
+
+Abrir directamente <https://jorgepessoa-dev.github.io/GT4-AtlanticoSul-apresentacao/> em desktop, tablet ou telemóvel. Recomendado **Chrome** ou **Firefox** em *fullscreen* (`F11`) para a apresentação ao vivo.
+
+### B · Local sem internet (apresentação offline)
+
+Clonar ou descarregar o repo (botão verde *Code → Download ZIP*), depois escolher **uma** das opções:
+
+| Opção | Como | Requer |
+|---|---|---|
+| **B1 · Duplo-clique** | Abrir `index.html` directamente no browser | Nada · mas o vídeo (S5b) pode falhar em Chrome/Edge devido a CORS de `file://` |
+| **B2 · Windows nativo** ⭐ | Duplo-clique em **`serve.bat`** · abre browser automaticamente em `http://localhost:8000` | Nada (PowerShell + .NET incluídos no Windows desde 2009) |
+| **B3 · Python** | `python -m http.server 8000` na raiz | Python 3 |
+| **B4 · Node.js** | `npx serve` ou `npx http-server` na raiz | Node.js |
+| **B5 · Caddy** | `caddy file-server --listen :8000` | binário caddy ([download](https://caddyserver.com/download)) |
+| **B6 · VS Code** | Extensão *Live Server* · clique-direito em `index.html` → *Open with Live Server* | VS Code |
+
+**Recomendado para Windows sem Python: opção B2** (`serve.bat`). Não requer instalações; PowerShell e .NET já existem no sistema.
+
+### C · Apresentação ao vivo (auditório)
+
+1. Portátil ligado ao projector (HDMI/VGA)
+2. Browser em fullscreen (`F11`)
+3. Tecla `S` abre **speaker view** numa segunda janela com notas, próximo slide e cronómetro — passa essa janela para o ecrã do portátil e o slideshow para o projector
+4. **Backup**: ter o **PDF exportado** (instruções abaixo) num pen USB ou no telemóvel
 
 ---
 
